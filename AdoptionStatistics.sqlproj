@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>AdoptionStatisticsDb</Name>
+    <Name>AdoptionStatistics</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{3622d4e7-a2ff-4632-9b5a-80e3750bc383}</ProjectGuid>
@@ -12,8 +12,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>AdoptionStatisticsDb</RootNamespace>
-    <AssemblyName>AdoptionStatisticsDb</AssemblyName>
+    <RootNamespace>AdoptionStatistics</RootNamespace>
+    <AssemblyName>AdoptionStatistics</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
