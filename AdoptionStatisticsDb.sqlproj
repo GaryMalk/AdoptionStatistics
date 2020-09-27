@@ -57,5 +57,30 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\State.sql" />
+    <Build Include="Tables\AdoptionSubsidy.sql" />
+    <Build Include="Tables\FamilyStructure.sql" />
+    <Build Include="Tables\FinalAge.sql" />
+    <Build Include="Tables\Gender.sql" />
+    <Build Include="Tables\PriorRelationship.sql" />
+    <Build Include="Tables\Race.sql" />
+    <Build Include="Tables\SpecialNeeds.sql" />
+    <Build Include="Tables\TPR_Adopt.sql" />
+    <Build Include="Views\AdoptionSubsidyRawDataView.sql" />
+    <Build Include="Views\AverageAgeByStateYear.sql" />
+    <Build Include="Views\AverageTprMoByStateYear.sql" />
+    <Build Include="Views\FamilyStructureRawDataView.sql" />
+    <Build Include="Views\FinalAgeRawDataView.sql" />
+    <Build Include="Views\GenderRawDataView.sql" />
+    <Build Include="Views\MasterRawDataView.sql" />
+    <Build Include="Views\ObservationsByStateYear.sql" />
+    <Build Include="Views\PriorRelationshipRawDataView.sql" />
+    <Build Include="Views\RaceRawDataView.sql" />
+    <Build Include="Views\SpecialNeedsRawDataView.sql" />
+    <Build Include="Views\TprToAdoptRawDataView.sql" />
   </ItemGroup>
 </Project>
