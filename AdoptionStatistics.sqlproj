@@ -59,6 +59,7 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Views" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\State.sql" />
@@ -82,5 +83,6 @@
     <Build Include="Views\RaceRawDataView.sql" />
     <Build Include="Views\SpecialNeedsRawDataView.sql" />
     <Build Include="Views\TprToAdoptRawDataView.sql" />
+    <PostDeploy Include="Scripts\InsertStateNames.sql" />
   </ItemGroup>
 </Project>

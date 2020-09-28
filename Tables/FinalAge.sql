@@ -10,6 +10,7 @@ CREATE TABLE [dbo].[FinalAge](
 	[Age_6_YR] [float] NOT NULL,
 	[Age_7_YR] [float] NOT NULL,
 	[Age_8_YR] [float] NOT NULL,
+	[Age_0_TO_8_YR] [float] NOT NULL,
 	[Age_9_YR] [float] NOT NULL,
 	[Age_10_YR] [float] NOT NULL,
 	[Age_11_YR] [float] NOT NULL,
