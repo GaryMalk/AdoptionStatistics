@@ -1,4 +1,11 @@
-﻿-- Insert State names into the dbo.[State] table
+﻿/*
+InsertStateNames.sql
+--------------------------------------------------------------------------------------
+ This file contains SQL statements that will be appended to the build script.
+
+ Insert State names into the dbo.[State] table
+--------------------------------------------------------------------------------------
+*/
 
 SET IDENTITY_INSERT dbo.[State] ON
 

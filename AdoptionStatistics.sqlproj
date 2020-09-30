@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Views" />
     <Folder Include="Scripts" />
+    <Folder Include="Csv" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\State.sql" />
@@ -84,5 +85,32 @@
     <Build Include="Views\SpecialNeedsRawDataView.sql" />
     <Build Include="Views\TprToAdoptRawDataView.sql" />
     <PostDeploy Include="Scripts\InsertStateNames.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\BulkInsertCsv.sql" />
+    <None Include="Csv\adoption_subsidy2012_2016.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\family_structure.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\final_age.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\gender2012_2016.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\prior_relation.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\race.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\special_needs2012_2016.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Csv\tpr.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
