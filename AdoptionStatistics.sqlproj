@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{3622d4e7-a2ff-4632-9b5a-80e3750bc383}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -84,10 +84,9 @@
     <Build Include="Views\RaceRawDataView.sql" />
     <Build Include="Views\SpecialNeedsRawDataView.sql" />
     <Build Include="Views\TprToAdoptRawDataView.sql" />
-    <PostDeploy Include="Scripts\InsertStateNames.sql" />
+    <PostDeploy Include="Scripts\PostDeploy.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\BulkInsertCsv.sql" />
     <None Include="Csv\adoption_subsidy2012_2016.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -112,5 +111,11 @@
     <None Include="Csv\tpr.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="CurrentPath">
+      <DefaultValue>C:\csv_output</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>
