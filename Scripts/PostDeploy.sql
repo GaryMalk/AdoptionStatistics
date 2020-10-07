@@ -8,76 +8,35 @@ PostDeploy.sql
 */
 
 -- Insert State Names
+-- Do State table first as all the other tables have a FK relationship with it
 
 CREATE TABLE #states
 (
+  [Id] int NOT NULL,
   [Name] VARCHAR(20) NOT NULL
 )
- 
-INSERT INTO #states (Name) VALUES ('Alabama'),
-('Alaska'),
-('Arizona'),
-('Arkansas'),
-('California'),
-('Colorado'),
-('Connecticut'),
-('Delaware'),
-('District of Columbia'),
-('Florida'),
-('Georgia'),
-('Hawaii'),
-('Idaho'),
-('Illinois'),
-('Indiana'),
-('Iowa'),
-('Kansas'),
-('Kentucky'),
-('Louisiana'),
-('Maine'),
-('Maryland'),
-('Massachusetts'),
-('Michigan'),
-('Minnesota'),
-('Mississippi'),
-('Missouri'),
-('Montana'),
-('Nebraska'),
-('Nevada'),
-('New Hampshire'),
-('New Jersey'),
-('New Mexico'),
-('New York'),
-('North Carolina'),
-('North Dakota'),
-('Ohio'),
-('Oklahoma'),
-('Oregon'),
-('Pennsylvania'),
-('Rhode Island'),
-('South Carolina'),
-('South Dakota'),
-('Tennessee'),
-('Texas'),
-('Utah'),
-('Vermont'),
-('Virginia'),
-('Washington'),
-('West Virginia'),
-('Wisconsin'),
-('Wyoming'),
-('Puerto Rico')
+
+BULK INSERT #states
+FROM '$(CsvPath)\State.csv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    TABLOCK
+)
 
 MERGE State
 USING #states
-ON (#states.[Name] = [State].[Name])
+ON (#states.[Id] = [State].[Id])
 WHEN NOT MATCHED THEN
-INSERT VALUES (#states.[Name]);
+INSERT VALUES (#states.[Id], #states.[Name]);
 
 DROP TABLE #states
 
 GO
 
--- Create Temp tables
+-- Create all other Temp tables
 
 CREATE TABLE #adoptsubs(
 	StateId int,
@@ -197,7 +156,7 @@ GO
 -- BULK INSERT #from CSV files into their temp tables
 
 BULK INSERT #adoptsubs
-FROM '$(CsvPath)\adoption_subsidy2012_2016.csv'
+FROM '$(CsvPath)\adoption_subsidy.csv'
 WITH
 (
     FIRSTROW = 2,
@@ -227,7 +186,7 @@ WITH
 )
 
 BULK INSERT #gender
-FROM '$(CsvPath)\gender2012_2016.csv'
+FROM '$(CsvPath)\gender.csv'
 WITH
 (
     FIRSTROW = 2,
@@ -257,7 +216,7 @@ WITH
 )
 
 BULK INSERT #specneeds
-FROM '$(CsvPath)\special_needs2012_2016.csv'
+FROM '$(CsvPath)\special_needs.csv'
 WITH
 (
     FIRSTROW = 2,

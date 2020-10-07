@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[State](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Id] [int] NOT NULL,
 	[Name] [varchar](30) NOT NULL,
 	UNIQUE ([Name]),
  CONSTRAINT [PK_State] PRIMARY KEY CLUSTERED 
