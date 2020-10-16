@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[TprToAdoptRawDataView] AS
+CREATE VIEW [dbo].[TprToAdoptCountView] AS
 SELECT StateId
       ,[Year]
 ,ROUND([Tpr_LT_1Mo] * [Total] /100, 0) AS [< 1 mo]

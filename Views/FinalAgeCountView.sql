@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[FinalAgeRawDataView] AS
+CREATE VIEW [dbo].[FinalAgeCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([Age_LT_1_YR] * [Total] /100, 0) AS [< 1 yr]

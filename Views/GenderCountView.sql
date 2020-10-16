@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[GenderRawDataView] AS
+CREATE VIEW [dbo].[GenderCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([Male] * [Total] /100, 0) AS [Male]

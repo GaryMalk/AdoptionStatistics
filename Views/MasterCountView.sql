@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[MasterRawDataView] AS
+CREATE VIEW [dbo].[MasterCountView] AS
 SELECT g.[StateId]
       ,g.[Year]
 	  ,ads.[Yes] AS 'AdoptSubsidy'
@@ -50,11 +50,11 @@ SELECT g.[StateId]
       ,tpr.[30 to 35 mo]
       ,tpr.[3 to 4 yr]
       ,tpr.[>= 5 yr]
-FROM [dbo].[GenderRawDataView] g
-JOIN [dbo].[RaceRawDataView] r ON g.StateId = r.StateId AND g.[Year] = r.[Year]
-JOIN [dbo].[PriorRelationshipRawDataView] pr ON pr.StateId = r.StateId AND pr.[Year] = r.[Year]
-JOIN [dbo].[FamilyStructureRawDataView] fs ON fs.StateId = pr.StateId AND fs.[Year] = pr.[Year]
-JOIN [dbo].[FinalAgeRawDataView] fa  ON fa.StateId = fs.StateId AND fa.[Year] = fs.[Year]
-JOIN [dbo].[AdoptionSubsidyRawDataView] ads ON fa.StateId = ads.StateId AND fa.[Year] = ads.[Year]
-JOIN [dbo].[TprToAdoptRawDataView] tpr ON tpr.StateId = ads.StateId AND tpr.[Year] = ads.[Year]
+FROM [dbo].[GenderCountView] g
+JOIN [dbo].[RaceCountView] r ON g.StateId = r.StateId AND g.[Year] = r.[Year]
+JOIN [dbo].[PriorRelationshipCountView] pr ON pr.StateId = r.StateId AND pr.[Year] = r.[Year]
+JOIN [dbo].[FamilyStructureCountView] fs ON fs.StateId = pr.StateId AND fs.[Year] = pr.[Year]
+JOIN [dbo].[FinalAgeCountView] fa  ON fa.StateId = fs.StateId AND fa.[Year] = fs.[Year]
+JOIN [dbo].[AdoptionSubsidyCountView] ads ON fa.StateId = ads.StateId AND fa.[Year] = ads.[Year]
+JOIN [dbo].[TprToAdoptCountView] tpr ON tpr.StateId = ads.StateId AND tpr.[Year] = ads.[Year]
 GO

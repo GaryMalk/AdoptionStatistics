@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[FamilyStructureRawDataView] AS
+CREATE VIEW [dbo].[FamilyStructureCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([Married] * [Total] /100, 0) AS [Married]

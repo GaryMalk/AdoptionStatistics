@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[SpecialNeedsRawDataView] AS
+CREATE VIEW [dbo].[SpecialNeedsCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([Yes] * [Total] /100, 0) AS [Yes]

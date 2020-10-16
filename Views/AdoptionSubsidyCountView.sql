@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[AdoptionSubsidyRawDataView] AS
+CREATE VIEW [dbo].[AdoptionSubsidyCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([Yes] * [Total] /100, 0) AS [Yes]

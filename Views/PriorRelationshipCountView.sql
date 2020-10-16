@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[PriorRelationshipRawDataView] AS
+CREATE VIEW [dbo].[PriorRelationshipCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([NonRelative] * [Total] /100, 0) AS [NonRelative]

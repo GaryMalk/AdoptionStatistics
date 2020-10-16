@@ -1,4 +1,4 @@
-CREATE VIEW [dbo].[RaceRawDataView] AS
+CREATE VIEW [dbo].[RaceCountView] AS
 SELECT StateId
       ,[Year]
       ,ROUND([NativeAmerican] * [Total] /100, 0) AS [Native American]
