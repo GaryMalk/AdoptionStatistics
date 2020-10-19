@@ -8,7 +8,7 @@ PostDeploy.sql
 */
 
 -- Insert State Names
--- Do State table first as all the other tables have a FK relationship with it
+-- Do State table first as all the other tables have an FK relationship with it
 
 CREATE TABLE #states
 (
